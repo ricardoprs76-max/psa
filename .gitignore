@@ -1,0 +1,11 @@
+node_modules/
+.next/
+web/.datos/
+.env
+.env.*
+*.tsbuildinfo
+*.log
+*.apk
+nube/claves-servidor.txt
+despliegue/
+web/public/maplibre/

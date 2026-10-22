@@ -1,0 +1,23 @@
+# Sistema PSA en Render (plan gratis). La base de datos está en un PostgreSQL en la nube (DATABASE_URL)
+# y los archivos y respaldos en Google Drive (PSA_NUBE_URL / PSA_NUBE_TOKEN). Los valores secretos se escriben en Render.
+services:
+  - type: web
+    name: sistema-psa
+    runtime: node
+    plan: free
+    buildCommand: cd web && npm ci --no-audit --no-fund && npm run build
+    startCommand: cd web && node_modules/.bin/next start -H 0.0.0.0 -p $PORT
+    healthCheckPath: /ingresar
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: PSA_DIR_DATOS
+        value: /tmp/psa-datos
+      - key: DATABASE_URL
+        sync: false
+      - key: PSA_NUBE_URL
+        sync: false
+      - key: PSA_NUBE_TOKEN
+        sync: false
+      - key: PSA_SECRETO
+        sync: false

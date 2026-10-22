@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* El modo oscuro se activa con la clase "dark" en <html> (botón de la barra lateral). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --fondo: #f3f6f4;
+  --tarjeta: #ffffff;
+  --texto: #14241b;
+  --tenue: #5b6b62;
+  --borde: #dbe4de;
+  --marca: #1f7a3f;        /* verde institucional */
+  --marca-fuerte: #145c2e;
+  --marca-suave: #e3f3e8;
+  --acento: #f2b705;
+}
+.dark {
+  --fondo: #0d1512;
+  --tarjeta: #15201b;
+  --texto: #e7efe9;
+  --tenue: #9fb0a6;
+  --borde: #263530;
+  --marca: #4cc27a;
+  --marca-fuerte: #7fdba1;
+  --marca-suave: #173224;
+  --acento: #f2c94c;
+}
+
+@theme inline {
+  --color-fondo: var(--fondo);
+  --color-tarjeta: var(--tarjeta);
+  --color-texto: var(--texto);
+  --color-tenue: var(--tenue);
+  --color-borde: var(--borde);
+  --color-marca: var(--marca);
+  --color-marca-fuerte: var(--marca-fuerte);
+  --color-marca-suave: var(--marca-suave);
+  --color-acento: var(--acento);
+}
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.campo {
+  width: 100%;
+  border: 1px solid var(--borde);
+  background: var(--tarjeta);
+  color: var(--texto);
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+.campo:focus { border-color: var(--marca); box-shadow: 0 0 0 3px color-mix(in srgb, var(--marca) 22%, transparent); }
+.campo[readonly], .campo:disabled { opacity: 0.7; background: var(--fondo); }
+
+.maplibregl-popup-content { color: #14241b; border-radius: 0.6rem; }
+
+@media print {
+  aside, .no-imprimir { display: none !important; }
+  main { padding: 0 !important; margin: 0 !important; }
+  body { background: #fff; }
+}
