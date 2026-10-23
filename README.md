@@ -29,7 +29,19 @@ Nace de la experiencia jurídica y técnica del autor en proyectos PSA y en cont
 - **Respaldos** diarios en Google Drive y restauración.
 
 ## Capturas de pantalla
-Las capturas se agregarán en la carpeta [`screenshots`](screenshots/) con datos de demostración.
+Capturas tomadas con los datos ficticios de `supabase/seed.sql`.
+
+| Tablero | Predios |
+|---|---|
+| ![Tablero](screenshots/1-tablero.png) | ![Predios](screenshots/2-predios.png) |
+
+| Alertas de calidad de datos | Mapa con el polígono del predio |
+|---|---|
+| ![Alertas de calidad](screenshots/3-alertas-calidad.png) | ![Mapa](screenshots/4-mapa.png) |
+
+| Calculadora de incentivo | Ajustes |
+|---|---|
+| ![Calculadora](screenshots/5-calculadora.png) | ![Ajustes](screenshots/6-ajustes.png) |
 
 ## Instalación y uso
 **Requisitos:** Node.js 22.
